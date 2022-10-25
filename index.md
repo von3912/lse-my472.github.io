@@ -123,7 +123,7 @@ This week discusses processing tabular data in R with functions from the `tidyve
 
 ##### Seminar
 
-- Code: [Dplyr exercises](week02/03-exercises-tabular-data.Rmd), [solutions](week02/03-exercises-tabular-data-solution.Rmd)
+- Code: [Dplyr exercises](week02/03-exercises-tabular-data.Rmd), [solution](week02/03-exercises-tabular-data-solution.Rmd)
 
 
 ##### Reading
@@ -150,7 +150,7 @@ The lecture this week will offer an overview of the principles of exploratory da
 
 ##### Seminar
 
-- Code: [Exercises in visualistion](week03/04-exercise-visualisation.Rmd)
+- Code: [Exercises in visualistion](week03/04-exercises-visualisation.Rmd), [solution](week03/04-exercises-visualisation-solution.Rmd)
 
 
 ##### Reading
@@ -170,12 +170,12 @@ We will learn how to work with unstructured data in the form of text and discuss
 
 ##### Lecture
 
-- [Slides](week04/MY472-week07-text.pdf)
-- Code: [Regular expressions in R](week04/01-regular-expressions-in-r.Rmd), [textual analysis in R](week04/02-text-analysis.Rmd), [parsing pdfs](week04/03-parsing-pdfs.Rmd)
+- [Slides](week04/MY472-week04-text.pdf)
+- Code: [Regular expressions in R](week04/01-regular-expressions-in-r.Rmd), [text analysis](week04/02-text-analysis.Rmd), [parsing pdfs](week04/03-parsing-pdfs.Rmd)
 
 ##### Seminar
 
-- Code: [Exercises in textual analysis](week04/04-exercises-text-analysis.Rmd)
+- Code: [Exercises in text analysis](week04/04-exercises-text-analysis.Rmd), [solution](week04/04-exercises-text-analysis-solution.Rmd)
 
 
 ##### Reading
@@ -184,7 +184,7 @@ We will learn how to work with unstructured data in the form of text and discuss
 
 ##### Further reading
 - Wickham, Hadley and Garett Grolemund.  2017, [Chapter 14](http://r4ds.had.co.nz/strings.html)
-- [Regular expressions cheat sheet](week07/regular-expressions-cheat-sheet-v2.pdf)
+- [Regular expressions cheat sheet](week04/regular-expressions-cheat-sheet-v2.pdf)
 - [Regular expressions in R vignette](https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html)
 
 
@@ -200,8 +200,8 @@ In this week, we will learn how to obtain the data from the internet. This week 
 
 ##### Lecture
 
-- [Slides](week05/MY472-week03-HTML-CSS.pdf)
-- Code: [Website example](week05/website_5.html), [selecting elements](week05/01-selecting-elements.Rmd), [scraping tables](week05/02-scraping-tables.Rmd)
+- [Slides](week05/MY472-week05-scraping-1.pdf)
+- Code: [Website example](week05/data/website_5.html), [selecting elements](week05/01-selecting-elements.Rmd), [scraping tables](week05/02-scraping-tables.Rmd)
 
 
 ##### Seminar
@@ -235,7 +235,7 @@ Continuing from the material covered in Week 5, we will learn the advanced topic
 
 ##### Lecture
 
-- [Slides](week07/MY472-week04-scraping-part-2.pdf)
+- [Slides](week07/MY472-week07-scraping-2.pdf)
 - Code: [Scraping RSS](week07/01-newspaper-rss.Rmd), [introduction to RSelenium](week07/02-introduction-to-selenium.Rmd), [RSelenium example with the LSE website](week07/03-selenium-lse.Rmd)
 
 ##### Seminar
@@ -263,7 +263,7 @@ This week discusses how to work with Application Programming Interfaces (APIs) t
 
 ##### Lecture
 
-- [Slides](week08/MY472-week05-APIs.pdf)
+- [Slides](week08/MY472-week08-APIs.pdf)
 - Code: [JSON in R](week08/01-json-in-r.Rmd), [NYT API](week08/02-nytimes-api.Rmd), [Twitter REST API](week08/03-twitter-rest-api.Rmd)
 
 
