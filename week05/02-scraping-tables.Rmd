@@ -107,7 +107,7 @@ Now that we know what we're looking for, let's use `html_elements()` to identify
 
 
 ```{r}
-table_raw <- html_elements(html, css = "tba")
+table_raw <- html_elements(html, css = "table.wikitable:nth-child(21)")
 length(table_raw) # now a list of length 1
 ```
 
@@ -140,6 +140,9 @@ data_pop$city_name <- gsub("\\[.*\\]", "", data_pop$city_name)
 data_pop$population <- as.numeric(gsub(",", "", data_pop$population))
 
 data_pop
+
+
+#dbl--> double precision
 ```
 
 Now we're ready to generate the figure:
@@ -151,6 +154,10 @@ p <- ggplot(data_pop, aes(x=rank, y=population, label=city_name)) +
   scale_y_log10("log(population)", labels=scales::comma) +
   theme_minimal()
 p
+
+
+#label every data point to city_name
+#added log scales
 ```
 
 These power laws (https://en.wikipedia.org/wiki/Power_law) are remarkably general. For example, have a look how the first 10 million words in 30 Wikipedias (dumps from October 2015): https://en.wikipedia.org/wiki/Zipf%27s_law#/media/File:Zipf_30wiki_en_labels.png
