@@ -10,6 +10,7 @@ output: html_document
 library("tidyverse")
 library("plotly")
 library("scales")
+
 ```
 
 
@@ -42,16 +43,31 @@ Your code here:
 ```{r}
 
 # Transform date column to datetime (lubridate package!)
+library(lubridate)
+unemp$date <- as_date(unemp$date)
 
+#create your base plot, you define the mapping)
+yrng <- range(unemp$unemp, na.rm = TRUE)
+
+#as_date--> for an object (we need a column and table)#
 
 
 # Create a line-plot with unemployment and date
 
+library(ggplot2) 
 
+p <- ggplot(data = unemp, aes(x = date, y = unemp))
+p + geom_line()
 
 # Fix axes and add colored rectangles
+p.labs <- p + labs(x = "Party of Presdient", y = "Unemployment Rate")
+p.labs + geom_line()
 
 
+ggplot(unemp, aes(x = date, y = unemp)) +
+  geom_rect(xmin = 0, xmax = 3, ymin = -0.5, ymax = Inf,
+            fill = 'blue', alpha = 0.05) +
+  geom_line()
 
 # Adding president names
 

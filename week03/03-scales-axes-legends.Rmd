@@ -213,4 +213,9 @@ p4 <- ggplot(df, aes(x = gender, y = likes_count)) +
 pdf("multiple_plots_grid.pdf", height = 6, width = 6)
 grid.arrange(arrangeGrob(p1, p2, p3, p4, ncol = 2, heights = c(0.6, 0.4)))
 dev.off()
+
+#pdf --> means open with pdf
+#next line--> creates the grid
+#dev.off()--> means to close the file
+#he didn't use the gg function
 ```

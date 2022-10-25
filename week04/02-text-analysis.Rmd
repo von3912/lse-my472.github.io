@@ -27,6 +27,8 @@ exemplary_documents
 Next, we create a `corpus` object from the texts using the `quanteda` package. For a detailed tutorial of this package and textual analysis with it see the following [link](https://tutorials.quanteda.io/). The corpus object stores the documents and a data frame containing so called document variables (`docvars`) that describe the individual documents. When creating the corpus for our example, let us store the name and the number of characters of each document as the document variables.
 
 ```{r}
+#just count the number of characters
+
 exemplary_corpus <- corpus(exemplary_documents,
 
                            docvars = data.frame(name = names(exemplary_documents),
@@ -37,6 +39,7 @@ exemplary_corpus <- corpus(exemplary_documents,
 This corpus consists of three documents and two docvars:
 
 ```{r}
+#comes as the documents and 2 doc variables
 exemplary_corpus
 ```
 
@@ -55,12 +58,15 @@ data_corpus_inaugural
 ```
 
 ```{r}
+#docvars: year, president, firstName, party
+
 head(docvars(data_corpus_inaugural))
 ```
 
 Based on this corpus, let us create a document-feature matrix (dfm). It has a row for each document and a column for each word/term. Cells contain word counts in the respective documents.
 
 ```{r}
+#use tokens()?
 dfmplain <- dfm(data_corpus_inaugural)
 dfmplain
 ```
@@ -70,6 +76,7 @@ Note: There might be some slight variation in the features before and after remo
 When building such a dfm, however, we might e.g. want to avoid counts of punctuation characters. For this we should make the tokenisation step explicit which allows us to specify certain options, here to remove punctuation (in fact the `dfm()` function without a token step will be deprecated):
 
 ```{r}
+#removes the :
 dfmplain <- data_corpus_inaugural %>%
     tokens(remove_punct = TRUE) %>% 
     dfm()
@@ -80,6 +87,7 @@ dfmplain
 We can now apply dictionary methods to these data. For this we first create a dictionary object from a simple named list. Note that this list could also e.g. contain two character vectors for words associated with positive and negative sentiments.
 
 ```{r}
+#it takes a list 
 short_dictionary <- dictionary(list(taxation = c("tax", "taxes", "taxation"),
                                     unemployment = c("unemployment", "unemployed"))
                                )
@@ -114,6 +122,7 @@ dfmplain %>% dfm_select(pattern = "tax[a-z]*", valuetype = "regex") %>% featname
 
 What would(n't) be selected with "tax[a-z]+" and why?
 
+
 With our dictionary and the dfm, we can then create a new dfm containing the counts of words found for each of the two sub-dictionaries. We use our glob dictionary and specify in the `dfm_lookup` function to use the glob notation. Note that in the case of sentiment analysis, the resulting dfm could e.g. have one column for positive and one column for negative sentiment keywords, in our example it has one for taxation and one for unemployment words.
 
 ```{r}
@@ -144,6 +153,9 @@ pq <- p + geom_point() + geom_text(hjust=-.1, size=3) +
   xlab("Taxation") +
   ylab("Unemployment")
 pq
+
+
+#so Reagan and Roosevelt talked about unemployment a lot --> prob due to great depression
 ```
 
 #### 3. Wordclouds
@@ -165,6 +177,10 @@ textplot_wordcloud(dfm_subset(dfmcleaned, President == "Obama"),
                    rotation=0, min_size=.75, max_size=3, max_words=50)
 textplot_wordcloud(dfm_subset(dfmcleaned, President == "Trump"),
                    rotation=0, min_size=.75, max_size=3, max_words=50)
+
+
+
+#remove en(english) stop words
 ```
 
 How would such a plot look like without stopwords removed?
@@ -186,6 +202,11 @@ dfmcleaned <- data_corpus_inaugural %>%
   dfm() %>%
   dfm_trim(min_termfreq = 2)
 dfmcleaned
+
+
+#stopwords, if we took 'the economy' for example, we would get an empty space (' the economy')--> use padding to leave the space
+
+#
 ```
 
 

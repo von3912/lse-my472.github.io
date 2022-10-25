@@ -12,9 +12,10 @@ library(rvest)
 Let us use our simple self-made website to illustrate how elements of websites can be selected and scraped. First, let us read the HTML content of the site:
 
 ```{r}
-url <- "https://lse-my472.github.io/week03/website_5.html"
+url <- "https://lse-my472.github.io/week05/data/website_5.html"
 html <- read_html(url)
 ```
+
 
 Next, let us scrape all paragraphs from our website. Recall that the CSS selector of a paragraph was "p".
 
@@ -79,6 +80,6 @@ Lastly, when inspecting an element and copying the CSS selector in your browser,
 Scraping with this CSS selector yields the correct element from our website:
 
 ```{r}
-relevant_nodes <- html_nodes(html, css = "tba")
+relevant_nodes <- html_nodes(html, css = ".division-two > p:nth-child(2)")
 html_text(relevant_nodes[[1]])
 ```
